@@ -12,12 +12,6 @@ export const getStaticPaths = async () => {
       params: { id: nexsiz.id.toString() },
     })
   );
-
-  //   const paths: Paths[] = nexsizs.map((nexsiz: any) => ({
-  //     params: {
-  //       id: nexsiz.id.toString(),
-  //     },
-  //   }));
   return {
     paths,
     fallback: false,
@@ -37,7 +31,7 @@ export const getStaticProps = async (context: any) => {
   };
 };
 
-interface Props {
+type Props = {
   nexsiz: {
     id: number;
     name: string;
@@ -45,7 +39,7 @@ interface Props {
     website: string;
     address: { city: string };
   };
-}
+};
 
 const Details = ({ nexsiz }: Props) => {
   return (
